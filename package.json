@@ -1,0 +1,23 @@
+{
+  "name": "59_021418_css_image_mask_clipping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tivo389/59_021418_CSS_IMAGE_MASK_CLIPPING.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tivo389/59_021418_CSS_IMAGE_MASK_CLIPPING/issues"
+  },
+  "homepage": "https://github.com/Tivo389/59_021418_CSS_IMAGE_MASK_CLIPPING#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^4.0.0"
+  }
+}

@@ -4,7 +4,51 @@
 @import '_font';
 @import '_general';
 
+@keyframes wave {
+  0% {transform: translateY(-4px);}
+  50% {transform: translateY(-12px);}
+  100% {transform: translateY(-4px);}
+}
+@keyframes opacity {
+  0% {opacity: 1.0;}
+  50% {opacity: 0.0;}
+  100% {opacity: 1.0;}
+}
 
+h1 {
+  &.wave--darken {
+    color: darken($color--wave, 25%);
+  }
+  &.jungle--darken {
+    color: darken($color--jungle, 10%);
+    mask-image: url('../images/texture_02.png');
+    mask-size: auto;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-position-x: -180px;
+  }
+  &.mask--wave {
+    color: darken($color--wave, 35%);
+    mask-image: url('../images/texture_01.png');
+    mask-size: 12.5%;
+    transform: translateY(-7px);
+    animation: wave 4s cubic-bezier(0,.71,1,.31) infinite;
+  }
+}
+.section--full-view {
+  &.bg--wave {
+    background-color: $color--wave;
+    mask-image: url('../images/texture_01.png');
+    mask-size: 12.5%;
+  }
+  &.bg--jungle {
+    background-color: $color--jungle;
+    mask-image: url('../images/texture_02.png');
+    mask-size: auto;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+}
 
 /* BOOTSTRAP NOTES & RESOLUTION REFERENCE */
 // xs < 768px (.container @ auto)
