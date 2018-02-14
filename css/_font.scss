@@ -1,12 +1,15 @@
 h1, h2, h3, h4, h5, h6, p, a {
   color: $color--black;
-  font-family: $font__family--header;
   line-height: 125%;
   text-align: center;
 }
 h1 {
+  font-family: $font__family--header;
   font-size: $font__size--h1;
   font-weight: bolder;
+  padding: 10px;
+  line-height: 0.85;
+  letter-spacing: -10px;
 }
 h2 {
   font-size: $font__size--h2;
@@ -24,7 +27,11 @@ h5, h6 {
   font-size: $font__size--h5;
 }
 p {
+  font-family: $font__family--body;
   font-size: $font__size--p;
+  &.font-size--sm {
+    font-size: 1.4rem;
+  }
 }
 a {
   font-size: $font__size--p;
