@@ -35,6 +35,53 @@ h1 {
     animation: wave 4s cubic-bezier(0,.71,1,.31) infinite;
   }
 }
+.texture-- {
+  &block {
+    height: 50vh;
+    padding: 0 0 0 0;
+    // border: 5px dashed red;  // interesting effect experiment later
+  }
+  &text {
+    position: absolute;
+    z-index: 10;
+  }
+  &01 {
+    &:after {
+      background-color: $color__theme--main;
+      content: '';
+      display: block;
+      height: 100%;
+      mask-image: url('../images/texture_01.png');
+      mask-size: 50%;
+      width: 100%;
+    }
+  }
+  &02 {
+    mask-size: cover;
+    background-color: $color__theme--accent;
+    mask-image: url('../images/texture_02.png');
+  }
+  &03 {
+    mask-size: cover;
+    background-color: $color__theme--main;
+    mask-image: url('../images/texture_02.svg');
+  }
+  &04 {
+    mask-size: 75%;
+    background-color: $color__theme--accent;
+    mask-image: url('../images/texture_03.png');
+  }
+  &05 {
+    mask-size: 25%;
+    background-color: $color__theme--main;
+    mask-image: url('../images/texture_04.png');
+  }
+  &06 {
+    mask-size: 25%;
+    background-color: $color__theme--accent;
+    mask-image: url('../images/texture_04.svg');
+  }
+}
 .section--full-view {
   &.bg--wave {
     background-color: $color--wave;
