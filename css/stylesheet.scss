@@ -15,6 +15,9 @@
   100% {opacity: 1.0;}
 }
 
+hr {
+  border-top: none;
+}
 h1 {
   &.wave--darken {
     color: darken($color--wave, 25%);
@@ -35,6 +38,13 @@ h1 {
     animation: wave 4s cubic-bezier(0,.71,1,.31) infinite;
   }
 }
+%extTexture {
+  background-color: $color__theme--main;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+}
 .texture-- {
   &block {
     height: 50vh;
@@ -47,39 +57,50 @@ h1 {
   }
   &01 {
     &:after {
-      background-color: $color__theme--main;
-      content: '';
-      display: block;
-      height: 100%;
+      @extend %extTexture;
       mask-image: url('../images/texture_01.png');
       mask-size: 50%;
-      width: 100%;
     }
   }
   &02 {
-    mask-size: cover;
-    background-color: $color__theme--accent;
-    mask-image: url('../images/texture_02.png');
+    &:after {
+      @extend %extTexture;
+      mask-image: url('../images/texture_02.png');
+      background-color: $color__theme--accent;
+      mask-size: cover;
+    }
   }
   &03 {
-    mask-size: cover;
-    background-color: $color__theme--main;
-    mask-image: url('../images/texture_02.svg');
+    &:after {
+      @extend %extTexture;
+      mask-image: url('../images/texture_02.svg');
+      mask-size: cover;
+      background-color: $color__theme--main;
+    }
   }
   &04 {
-    mask-size: 75%;
-    background-color: $color__theme--accent;
-    mask-image: url('../images/texture_03.png');
+    &:after {
+      @extend %extTexture;
+      mask-image: url('../images/texture_03.png');
+      mask-size: 75%;
+      background-color: $color__theme--accent;
+    }
   }
   &05 {
-    mask-size: 25%;
-    background-color: $color__theme--main;
-    mask-image: url('../images/texture_04.png');
+    &:after {
+      @extend %extTexture;
+      mask-image: url('../images/texture_04.png');
+      mask-size: 25%;
+      background-color: $color__theme--main;
+    }
   }
   &06 {
-    mask-size: 25%;
-    background-color: $color__theme--accent;
-    mask-image: url('../images/texture_04.svg');
+    &:after {
+      @extend %extTexture;
+      mask-image: url('../images/texture_04.svg');
+      mask-size: 25%;
+      background-color: $color__theme--accent;
+    }
   }
 }
 .section--full-view {
