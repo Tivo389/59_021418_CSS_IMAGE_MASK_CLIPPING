@@ -22,20 +22,22 @@ h1 {
   &.wave--darken {
     color: darken($color--wave, 25%);
   }
-  &.jungle--darken {
-    color: darken($color--jungle, 10%);
-    mask-image: url('../images/texture_02.png');
-    mask-size: auto;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-position-x: -180px;
-  }
   &.mask--wave {
     color: darken($color--wave, 35%);
     mask-image: url('../images/texture_01.png');
     mask-size: 12.5%;
     transform: translateY(-7px);
     animation: wave 4s cubic-bezier(0,.71,1,.31) infinite;
+  }
+}
+.jungle--text--container {
+  position: absolute;
+  h1 {
+    position: absolute;
+    &.jungle--text {
+      color: $color--jungle;
+      // color: $color--jungle--accent;
+    }
   }
 }
 %extTexture {
@@ -110,11 +112,31 @@ h1 {
     mask-size: 12.5%;
   }
   &.bg--jungle {
-    background-color: $color--jungle;
-    mask-image: url('../images/texture_02.png');
-    mask-size: auto;
-    mask-repeat: no-repeat;
-    mask-position: center;
+    padding: 0;
+    position: relative;
+    &:before {
+      background-color: $color--jungle;
+      content: '';
+      display: block;
+      mask-image: url('../images/texture_02.png');
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-size: cover;
+      min-height: 100vh;
+      mix-blend-mode: multiply;
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+    }
+    &:after {
+      background-color: $color--jungle;
+      content: '';
+      display: block;
+      min-height: 100vh;
+      mix-blend-mode: multiply;
+      position: absolute;
+      width: 100%;
+    }
   }
 }
 
