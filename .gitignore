@@ -1,5 +1,5 @@
-59_021418.sublime-project
-59_021418.sublime-workspace
+*.sublime-project
+*.sublime-workspace
 gulpfile.js
 package-lock.json
 /node_modules/*
