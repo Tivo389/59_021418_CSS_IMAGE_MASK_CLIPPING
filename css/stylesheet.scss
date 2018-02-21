@@ -29,6 +29,19 @@ h1 {
     transform: translateY(-7px);
     animation: wave 4s cubic-bezier(0,.71,1,.31) infinite;
   }
+  &.polka--text {
+    color: $color--white;
+    font-family: $font__family--polka;
+    letter-spacing: -4px;
+    z-index: 20;
+    text-shadow: $polka-shadow;
+    transform: translateY(-10px) rotate(-15deg) scale(1.5);
+    .small {
+      color: inherit;
+      font-size: 65%;
+      margin-left: -4px;
+    }
+  }
 }
 .jungle--text--container {
   position: absolute;
@@ -106,10 +119,29 @@ h1 {
   }
 }
 .section--full-view {
-  &.bg--wave {
-    background-color: $color--wave;
-    mask-image: url('../images/texture_01.png');
-    mask-size: 12.5%;
+  &.bg--polka {
+    padding: 0;
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      min-height: 100vh;
+      position: absolute;
+      width: 100%;
+      box-shadow: $box-shadow--default;
+      background-color: $color--polka;
+      mask-image: url('../images/texture_04.svg');
+      mask-size: 4.5%;
+      z-index: 20;
+    }
+    &:after{
+      content: '';
+      display: block;
+      min-height: 100vh;
+      position: absolute;
+      width: 100%;
+      background-color: lighten(#EE487F, 10%);
+    }
   }
   &.bg--jungle {
     padding: 0;
@@ -137,6 +169,11 @@ h1 {
       position: absolute;
       width: 100%;
     }
+  }
+  &.bg--wave {
+    background-color: $color--wave;
+    mask-image: url('../images/texture_01.png');
+    mask-size: 12.5%;
   }
 }
 
