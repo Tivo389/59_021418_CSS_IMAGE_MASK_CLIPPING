@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One');
+@import url('https://fonts.googleapis.com/css?family=Plaster');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
 $box-shadow--default: 0 3px 3px rgba(0,0,0,0.12), 0 3px 3px rgba(0,0,0,0.24), 0 0 3px rgba(0,0,0,0.12);
 $box-shadow--hover: 0 6px 6px rgba(0,0,0,0.08), 0 6px 6px rgba(0,0,0,0.16), 0 0 6px rgba(0,0,0,0.08);
@@ -10,6 +12,8 @@ $color--white--transparent: rgba(255,255,255,0.95);
 $color--white: #FFFFFF;
 $color__theme--accent: #EE86A8;
 $color__theme--main: #99e6f9;
+$color--polka: #EE487F;
+$polka-shadow: 0 3px 3px darken($color--polka,20%), 0 3px 3px darken($color--polka,20%), 0 0 3px darken($color--polka,20%);
 $color--jungle: #4D8D01;
 $color--jungle--accent: #FF9607;
 $color--wave: #99e6f9;
@@ -17,6 +21,8 @@ $color__theme--sub: #EED786;
 $font__family--body: "Helvetica Neue", Helvetica, Arial, sans-serif;
 // $font__family--header: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font__family--header: 'Rubik Mono One', "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $font__family--polka: 'Plaster', cursive;
+$font__family--polka: 'Permanent Marker', cursive;
 $font__size--p: 1.6rem; // BODY TEXT
 $font__size--h5: calc(#{$font__size--p} * 1.35); // ARTICLE SUB HEADER
 $font__size--h4: calc(#{$font__size--h5} * 1.35); // ARTICLE MAIN HEADER
