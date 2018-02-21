@@ -18,6 +18,18 @@
 hr {
   border-top: none;
 }
+%extPolka {
+  font-family: $font__family--polka;
+  letter-spacing: -4px;
+  position: absolute;
+  // transform: translateY(-10px) scale(1.5);
+  transform: translateY(-10px) rotate(-15deg) scale(1.5);
+  .small {
+    color: inherit;
+    font-size: 65%;
+    margin-left: -4px;
+  }
+}
 h1 {
   &.wave--darken {
     color: darken($color--wave, 25%);
@@ -30,16 +42,18 @@ h1 {
     animation: wave 4s cubic-bezier(0,.71,1,.31) infinite;
   }
   &.polka--text {
+    @extend %extPolka;
     color: $color--white;
-    font-family: $font__family--polka;
-    letter-spacing: -4px;
+    mask-size: 7.5%;
+    // ROTATE CAUSES JAGGED EDGES WITH SVG
+    // mask-image: url('../images/texture_04.svg');
+    // ...BUT NOT WITH PNG
+    mask-image: url('../images/texture_04.png');
     z-index: 20;
-    text-shadow: $polka-shadow;
-    transform: translateY(-10px) rotate(-15deg) scale(1.5);
-    .small {
-      color: inherit;
-      font-size: 65%;
-      margin-left: -4px;
+    &--base {
+      @extend %extPolka;
+      color: $color--polka;
+      text-shadow: $polka--shadow;
     }
   }
 }
@@ -49,7 +63,6 @@ h1 {
     position: absolute;
     &.jungle--text {
       color: $color--jungle;
-      // color: $color--jungle--accent;
     }
   }
 }
@@ -120,28 +133,7 @@ h1 {
 }
 .section--full-view {
   &.bg--polka {
-    padding: 0;
-    position: relative;
-    &:before {
-      content: '';
-      display: block;
-      min-height: 100vh;
-      position: absolute;
-      width: 100%;
-      box-shadow: $box-shadow--default;
-      background-color: $color--polka;
-      mask-image: url('../images/texture_04.svg');
-      mask-size: 4.5%;
-      z-index: 20;
-    }
-    &:after{
-      content: '';
-      display: block;
-      min-height: 100vh;
-      position: absolute;
-      width: 100%;
-      background-color: lighten(#EE487F, 10%);
-    }
+    background-color: $color--polka;
   }
   &.bg--jungle {
     padding: 0;
