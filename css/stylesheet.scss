@@ -4,17 +4,6 @@
 @import '_font';
 @import '_general';
 
-@keyframes wave {
-  0% {transform: translateY(-4px);}
-  50% {transform: translateY(-12px);}
-  100% {transform: translateY(-4px);}
-}
-@keyframes opacity {
-  0% {opacity: 1.0;}
-  50% {opacity: 0.0;}
-  100% {opacity: 1.0;}
-}
-
 hr {
   border-top: none;
 }
@@ -22,7 +11,6 @@ hr {
   font-family: $font__family--polka;
   letter-spacing: -4px;
   position: absolute;
-  // transform: translateY(-10px) scale(1.5);
   transform: translateY(-10px) rotate(-15deg) scale(1.5);
   .small {
     color: inherit;
@@ -39,7 +27,7 @@ h1 {
     mask-image: url('../images/texture_01.png');
     mask-size: 12.5%;
     transform: translateY(-7px);
-    animation: wave 4s cubic-bezier(0,.71,1,.31) infinite;
+    position: absolute;
   }
   &.polka--text {
     @extend %extPolka;
@@ -54,6 +42,20 @@ h1 {
       @extend %extPolka;
       color: $color--polka;
       text-shadow: $polka--shadow;
+    }
+  }
+}
+.border-- {
+  &wave {
+    &:after {
+    content: '';
+    display: block;
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    border: 14px solid darken($color--wave, 35%);
+    mask-image: url('../images/texture_01.png');
+    mask-size: 12.5%;
     }
   }
 }
@@ -72,62 +74,103 @@ h1 {
   display: block;
   height: 100%;
   width: 100%;
+  &:nth-child(2n) {
+    background-color: $color__theme--accent;
+  }
 }
-.texture-- {
-  &block {
-    height: 50vh;
-    padding: 0 0 0 0;
-    // border: 5px dashed red;  // interesting effect experiment later
-  }
-  &text {
-    position: absolute;
-    z-index: 10;
-  }
-  &01 {
-    &:after {
-      @extend %extTexture;
-      mask-image: url('../images/texture_01.png');
-      mask-size: 50%;
+.row--flex {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  .texture-- {
+    &block {
+      flex: 1 20vw;
+      height: 50vh;
+      padding: 0 0 0 0;
+      // border: 5px dashed red;  // interesting effect experiment later
     }
-  }
-  &02 {
-    &:after {
-      @extend %extTexture;
-      mask-image: url('../images/texture_02.png');
-      background-color: $color__theme--accent;
-      mask-size: cover;
+    &text {
+      position: absolute;
+      z-index: 10;
     }
-  }
-  &03 {
-    &:after {
-      @extend %extTexture;
-      mask-image: url('../images/texture_02.svg');
-      mask-size: cover;
-      background-color: $color__theme--main;
+    &01 {
+      &:after {
+        @extend %extTexture;
+        mask-image: url('../images/texture_01.png');
+        mask-size: 50%;
+      }
     }
-  }
-  &04 {
-    &:after {
-      @extend %extTexture;
-      mask-image: url('../images/texture_03.png');
-      mask-size: 75%;
-      background-color: $color__theme--accent;
+    &02 {
+      &:after {
+        @extend %extTexture;
+        mask-image: url('../images/texture_02.png');
+        mask-size: cover;
+      }
     }
-  }
-  &05 {
-    &:after {
-      @extend %extTexture;
-      mask-image: url('../images/texture_04.png');
-      mask-size: 25%;
-      background-color: $color__theme--main;
+    &03 {
+      &:after {
+        @extend %extTexture;
+        mask-image: url('../images/texture_02.svg');
+        mask-size: cover;
+      }
     }
-  }
-  &06 {
-    &:after {
-      @extend %extTexture;
-      mask-image: url('../images/texture_04.svg');
-      mask-size: 25%;
-      background-color: $color__theme--accent;
+    &04 {
+      &:after {
+        @extend %extTexture;
+        mask-image: url('../images/texture_03.png');
+        mask-size: 75%;
+      }
+    }
+    &05 {
+      &:after {
+        @extend %extTexture;
+        mask-image: url('../images/texture_04.png');
+        mask-size: 25%;
+      }
+    }
+    &06 {
+      &:after {
+        @extend %extTexture;
+        mask-image: url('../images/texture_04.svg');
+        mask-size: 25%;
+      }
+    }
+    &07 {
+      &:after {
+        @extend %extTexture;
+        mask-image: url('../images/texture_05.png');
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+      }
+    }
+    &08 {
+      &:after {
+        @extend %extTexture;
+        mask-image: url('../images/texture_05.svg');
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+      }
+    }
+    &09 {
+      &:after {
+        @extend %extTexture;
+        mask-image: url('../images/texture_06.png');
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+      }
+    }
+    &10 {
+      &:after {
+        @extend %extTexture;
+        mask-image: url('../images/texture_06.svg');
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+      }
     }
   }
 }
