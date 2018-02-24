@@ -18,6 +18,8 @@
   "homepage": "https://github.com/Tivo389/59_021418_CSS_IMAGE_MASK_CLIPPING#readme",
   "devDependencies": {
     "browser-sync": "^2.23.6",
-    "gulp": "^4.0.0"
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-sass": "^3.1.0"
   }
 }
