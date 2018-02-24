@@ -48,7 +48,7 @@
 }
 .height {
   &--100 {
-    height: 100%;
+    height: 100vh !important;
   }
   &--90 {
     height: 90%;
