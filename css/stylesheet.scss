@@ -64,6 +64,26 @@ h1 {
     }
   }
 }
+img {
+  background-image: url('../images/image_01.jpg');
+  width: 35vw;
+  height: 35vw;
+  background-size: cover;
+  &:first-child {
+    margin: 0 5vw 0 0;
+  }
+  &.mask {
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    &--banner {
+      mask-image: url('../images/texture_05.svg');
+    }
+    &--box {
+      mask-image: url('../images/texture_06.svg');
+    }
+  }
+}
 %extBorder {
   content: '';
   display: block;
