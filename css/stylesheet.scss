@@ -22,6 +22,25 @@ h1 {
   &.wave--darken {
     color: darken($color--wave, 25%);
   }
+  &.mask--gritty {
+    color: darken($color--gray-dark, 35%);
+    mask-image: url('../images/texture_02.svg');
+    mask-size: 12.5%;
+    position: absolute;
+    &--misprint {
+      transform: translateY(-1px) translateX(1px) rotate(1deg);
+      opacity: 0.2;
+    }
+  }
+  &.mask--polka {
+    color: $color--polka;
+    mask-image: url('../images/texture_04.svg');
+    mask-size: 25%;
+    position: absolute;
+    &--base {
+      color: darken($color--polka, 5%)
+    }
+  }
   &.mask--wave {
     color: darken($color--wave, 35%);
     mask-image: url('../images/texture_01.png');
@@ -45,17 +64,43 @@ h1 {
     }
   }
 }
+%extBorder {
+  content: '';
+  display: block;
+  min-height: 100vh;
+  position: absolute;
+  width: 100%;
+}
 .border-- {
+  &gritty {
+    &:before {
+      @extend %extBorder;
+      border: 14px solid darken($color--gray-dark, 35%);
+      mask-image: url('../images/texture_02.svg');
+      mask-size: 12.5%;
+    }
+    &:after{
+      @extend %extBorder;
+      z-index: -10;
+      background-image: url('../images/texture_03.png');
+      background-color: $color--gray-light;
+    }
+  }
+  &polka {
+    background-color: lighten($color--polka, 30%);
+    &:after {
+      @extend %extBorder;
+      border: 14px solid $color--polka;
+      mask-image: url('../images/texture_04.svg');
+      mask-size: 2.5%;
+    }
+  }
   &wave {
     &:after {
-    content: '';
-    display: block;
-    min-height: 100vh;
-    position: relative;
-    width: 100%;
-    border: 14px solid darken($color--wave, 35%);
-    mask-image: url('../images/texture_01.png');
-    mask-size: 12.5%;
+      @extend %extBorder;
+      border: 14px solid darken($color--wave, 35%);
+      mask-image: url('../images/texture_01.png');
+      mask-size: 12.5%;
     }
   }
 }
